@@ -17,17 +17,33 @@
 package com.cve202x;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.widget.TextView;
 
-public class CVE202X extends Activity {
+public class CVE202X extends Activity implements View.OnClickListener {
+    private Context mContext;
+    private TextView txt;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView tv = new TextView(this);
-        tv.setText("This is a appLink app\nRun:adb install --staged CVE202X.apk\nRun:adb reboot\nAnd android will DoS");
-        setContentView(tv);
+        setContentView(R.layout.activity_main);
 
-        // development/samples/ApiDemos/src/com/example/android/apis/content/InstallApkSessionApi.java
+        mContext = this;
+        txt = findViewById(R.id.textview);
+        txt.setMovementMethod(new ScrollingMovementMethod());
+        findViewById(R.id.button).setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        txt.setText(txt.getText() + "\n" + clickMsg());
+    }
+
+    public String clickMsg() {
+        return "This is click message!";
     }
 }
