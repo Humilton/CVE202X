@@ -31,13 +31,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button).setOnClickListener(this);
     }
 
-    private String[] cmds = {"id", "pwd", "whoami"};
-    private int cnt=0;
+    private String[] cmds = {"id", "pwd", "echo CVE20XX"};
+    private int cnt = 0;
     @Override
     public void onClick(View v) {
-        String s = Util.runCmd(cmds[cnt++]);
-        txt.setText(txt.getText() + "\n" + s);
+        txt.setText(txt.getText() + "\n" + Util.runCmd(getCmd()) + "\n" + add(50, 30));
+    }
+
+    private String getCmd() {
+        String s = cmds[cnt++];
         if (cnt == cmds.length) cnt = 0;
-        Toast.makeText(mContext, "Clicked!", Toast.LENGTH_SHORT).show();
+        return s;
+    }
+
+    private int add(int x , int y ) {
+        return x + y;
     }
 }
