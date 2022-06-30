@@ -30,8 +30,6 @@ LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_PACKAGE_NAME := CVE202X
 
-LOCAL_JNI_SHARED_LIBRARIES := libcve202x
-
 LOCAL_PROGUARD_ENABLED := disabled
 
 LOCAL_SDK_VERSION := current

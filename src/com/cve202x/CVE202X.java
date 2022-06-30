@@ -21,23 +21,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class CVE202X extends Activity {
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView tv = new TextView(this);
-        int sum = Native.add(2, 3);
-        tv.setText("2 + 3 = " + Integer.toString(sum));
+        tv.setText("This is a appLink app\nRun:adb install --staged CVE202X.apk\nRun:adb reboot\nAnd android will DoS");
         setContentView(tv);
-    }
-}
 
-class Native {
-    static {
-    	// The runtime will add "lib" on the front and ".o" on the end of
-    	// the name supplied to loadLibrary.
-        System.loadLibrary("cve202x");
+        // development/samples/ApiDemos/src/com/example/android/apis/content/InstallApkSessionApi.java
     }
-
-    static native int add(int a, int b);
 }
