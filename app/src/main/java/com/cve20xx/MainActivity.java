@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int cnt = 0;
     @Override
     public void onClick(View v) {
-        txt.setText(txt.getText() + "\n" + Util.runCmd(getCmd()) + "\n" + add(50, 30));
+        txt.setText(txt.getText() + "\n" + Util.runCmd(getCmd()) + func(50, 30) + "\n" + func("LoWeRcAsE Me!!!") + "\n");
     }
 
     private String getCmd() {
@@ -44,7 +44,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return s;
     }
 
-    private int add(int x , int y ) {
+    private int func(int x , int y ) {
         return x + y;
+    }
+
+    private String func(String s) {
+        total += s;
+        return s.toLowerCase();
+    }
+
+    private String total = "@@@###@@@";
+    private String secret(){
+        return total;
     }
 }
