@@ -1,0 +1,10 @@
+.gradle/
+.idea/
+CVE20XX.apk
+build/
+keystore.properties
+gradle/
+gradlew
+gradlew.bat
+local.properties
+

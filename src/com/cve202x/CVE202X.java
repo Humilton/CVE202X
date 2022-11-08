@@ -25,7 +25,7 @@ public class CVE202X extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TextView tv = new TextView(this);
-        tv.setText("This is a appLink app\nRun:adb install --staged CVE202X.apk\nRun:adb reboot\nAnd android will DoS");
+        tv.setText("CVE202X");
         setContentView(tv);
 
         // development/samples/ApiDemos/src/com/example/android/apis/content/InstallApkSessionApi.java
